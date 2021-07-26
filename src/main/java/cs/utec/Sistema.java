@@ -18,6 +18,7 @@ public class Sistema {
     private double numeroDePersonasVacunadasCompletamente;
     private Usuario currentUser = null;
 
+
     public static Sistema getSistemaInstance(){
         if (instanciaSingleton == null){
             instanciaSingleton = new Sistema();
@@ -74,15 +75,21 @@ public class Sistema {
         double totalDePersonas = 22935533;
         avanceDeLaVacunacion = (float) ((numeroDePersonasVacunadasCompletamente*100)/ totalDePersonas);
         coberturaDeLaVacunacion = (float) ((numeroDePersonasVacunadasParcialmente*100)/ totalDePersonas);
+        numeroDeCentrosDeVacunacion = centrosDeVacunacion.size();
     }
 
     public void visualizarInformacion(){
         this.actualizarInformacion();
-        var avance = "Avance de la vacunacion: " + avanceDeLaVacunacion + "%";
-        var cobertura = "Cobertura de la vacunacion" + coberturaDeLaVacunacion + "%";
-        var centros = "Numero de centros de vacunacion: " + centrosDeVacunacion.size();
-        var parcial = "Numero de personas vacunadas parcialmente: " + numeroDePersonasVacunadasParcialmente;
-        var completa = "Numero de personas vacunadas completamente: " + numeroDePersonasVacunadasCompletamente;
+        var avance = "Avance de la vacunacion: " + avanceDeLaVacunacion + "%\n";
+        var cobertura = "Cobertura de la vacunacion" + coberturaDeLaVacunacion + "%\n";
+        var centros = "Numero de centros de vacunacion: " + numeroDeCentrosDeVacunacion + "\n";
+        var parcial = "Numero de personas vacunadas parcialmente: " + numeroDePersonasVacunadasParcialmente + "\n";
+        var completa = "Numero de personas vacunadas completamente: " + numeroDePersonasVacunadasCompletamente + "\n";
+        logger.info(avance);
+        logger.info(cobertura);
+        logger.info(centros);
+        logger.info(parcial);
+        logger.info(completa);
     }
 
     public void darDeAlta(int id, String nombre, String direccion){
