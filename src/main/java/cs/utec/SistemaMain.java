@@ -40,8 +40,8 @@ public class SistemaMain {
                             break;
                         case 2:
                             logger.info("Inserte id del centro");
-                            int id_ = Integer.parseInt(scanner.nextLine());
-                            sys.darDeBaja(id_);
+                            int id1 = Integer.parseInt(scanner.nextLine());
+                            sys.darDeBaja(id1);
                             break;
                         case 3:
                             logger.info("Sesion cerrada");
