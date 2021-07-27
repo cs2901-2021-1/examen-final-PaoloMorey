@@ -39,19 +39,23 @@ public class Sistema {
         }
     }
 
-    public void iniciarSesion(String usuario, String contrasena){
+    public boolean iniciarSesion(String usuario, String contrasena){
         if (currentUser == null){
             if (usuarios.containsKey(usuario)){
                 if (usuarios.get(usuario).getContrasena().equals(contrasena)){
                     currentUser = usuarios.get(usuario);
+                    return true;
                 }else{
                     logger.info("Contraseña Incorrecta");
+                    return false;
                 }
             }else{
                 logger.info("Usuario inexistente");
+                return false;
             }
         }else{
             logger.info("Ya existe una sesion iniciada");
+            return false;
         }
     }
 
