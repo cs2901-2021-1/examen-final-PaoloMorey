@@ -28,6 +28,7 @@ public class SistemaMain {
                     switch (toDo){
                         case 0:
                             sys.visualizarInformacion();
+                            break;
                         case 1:
                             logger.info("Inserte id del centro");
                             int id = Integer.parseInt(scanner.nextLine());
@@ -36,12 +37,15 @@ public class SistemaMain {
                             logger.info("Inserte direccion del centro");
                             String direccion = scanner.nextLine();
                             sys.darDeAlta(id, nombre, direccion);
+                            break;
                         case 2:
                             logger.info("Inserte id del centro");
                             int id_ = Integer.parseInt(scanner.nextLine());
                             sys.darDeBaja(id_);
+                            break;
                         case 3:
                             logger.info("Sesion cerrada");
+                            break;
                         default:
                             break;
                     }
